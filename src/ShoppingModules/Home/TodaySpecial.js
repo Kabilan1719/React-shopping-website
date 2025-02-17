@@ -11,7 +11,7 @@ const TodaySpecial = () => {
             <p>on professional camera drones</p>
             <h6>Limited quantities.<br/>See product detail pages for availability.</h6>
             <button className='shop-btn6'>Shop</button>
-            </div>
+        </div>
     </div>
   )
 }
