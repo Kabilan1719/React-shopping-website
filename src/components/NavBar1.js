@@ -24,7 +24,7 @@ const NavBar1 = () => {
               <NavLink to='About' style={{color:'white'}}><li>About</li></NavLink>
               <NavLink to='Contact' style={{color:'white'}}><li>Contact</li></NavLink>
               <NavLink to='HelpCenter' style={{color:'white'}}><li>Help Center</li></NavLink>
-              <NavLink to='CallUs' style={{color:'white'}}><li>Call Us 123-456-7890</li></NavLink>
+              <li>Call Us <a href='tel:+1234567890' style={{color:'white'}}>123-456-7890</a></li>
             </ul>
           </div>
     </div>

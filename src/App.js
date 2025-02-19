@@ -2,7 +2,6 @@ import {Route, RouterProvider, createBrowserRouter, createRoutesFromElements } f
 import './App.css';
 import RouteLayout from './RouteLayout';
 import About from './ShoppingModules/About'
-import CallUs from './ShoppingModules/CallUs'
 import Contact from './ShoppingModules/Contact'
 import HelpCenter from './ShoppingModules/HelpCenter'
 import Login from './ShoppingModules/Login.js'
@@ -28,9 +27,9 @@ function App() {
     <Route path='/'element={<RouteLayout />}>
       <Route index element={<><ShopNow /><ShopCard /><ShopServices /><BestSellerCard/><ShopCategory /><OnSale /><TodaySpecial />< Brands/><NewsLetter /><Footer /></>}/>
       <Route path='About' element={<><About /><Footer /></>}/>
-      <Route path='CallUs' element={<CallUs/>}/>
-      <Route path='Contact' element={<Contact />}/>
-      <Route path='HelpCenter' element={<HelpCenter />}/>
+      <Route path='Contact' element={<><Contact /><NewsLetter /><Footer /></>}/>
+      <Route path='HelpCenter' element={<><HelpCenter /><Footer /></>}/>
+      {/* <Route path='tel:+1234567890' /> */}
       <Route path='Login' element={<Login />} />
       <Route path='Favorite' element={<Favorite />} />
       <Route path='Cart' element={<Cart />} />
