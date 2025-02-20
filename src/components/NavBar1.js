@@ -3,7 +3,6 @@ import '../App.css'
 import { NavLink } from 'react-router-dom'
 
 const NavBar1 = () => {
-  console.log("NavBar1 loaded");
 
   return (
     <div className='navbar'>

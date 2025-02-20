@@ -18,7 +18,8 @@ import TodaySpecial from './ShoppingModules/Home/TodaySpecial.js';
 import Brands from './ShoppingModules/Home/Brands.js';
 import NewsLetter from './ShoppingModules/Home/NewsLetter.js';
 import Footer from './ShoppingModules/Home/Footer.js';
-// export const context = createContext();
+import ShopArray from './components/ShopContext.js';
+import Shop from './ShoppingModules/Shop.js';
 
 
 function App() {
@@ -29,18 +30,17 @@ function App() {
       <Route path='About' element={<><About /><Footer /></>}/>
       <Route path='Contact' element={<><Contact /><NewsLetter /><Footer /></>}/>
       <Route path='HelpCenter' element={<><HelpCenter /><Footer /></>}/>
-      {/* <Route path='tel:+1234567890' /> */}
       <Route path='Login' element={<Login />} />
       <Route path='Favorite' element={<Favorite />} />
       <Route path='Cart' element={<Cart />} />
+      <Route path='Shop' element={<Shop />} />
     </Route>
   ))
 
   return (
-    // <context.Provider value={{example:'test'}}>
-      
-    // </context.Provider>
-    <RouterProvider router={router} />
+    <ShopArray>
+      <RouterProvider router={router} />
+    </ShopArray>
   );
 }
 

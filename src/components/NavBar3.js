@@ -5,7 +5,7 @@ const NavBar3 = () => {
     <div className="link-header">
       <div className="sec-nav">
         <ul className="nav-list">
-          <NavLink className='nav-list-type'><li>Shop All</li></NavLink>
+          <NavLink className='nav-list-type' to='Shop'><li>Shop All</li></NavLink>
           <NavLink className='nav-list-type'><li>Computers</li></NavLink>
           <NavLink className='nav-list-type'><li>Tablets</li></NavLink>
           <NavLink className='nav-list-type'><li>Drones & Cameras</li></NavLink>
