@@ -2,7 +2,8 @@ import React, { createContext, useState } from 'react'
 export const ShopContext = createContext();
 
 const ShopArray = ({children}) => {
-    const [products, setProducts] = useState([
+
+    const [products] = useState([
         {
             id : 1,
             img : 'https://static.wixstatic.com/media/c22c23_67a4de6683784fbbb684418e49d5d854~mv2.png/v1/fill/w_373,h_373,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c22c23_67a4de6683784fbbb684418e49d5d854~mv2.png',
@@ -212,8 +213,31 @@ const ShopArray = ({children}) => {
             Sale : false
         },
     ])
+
+    const [cart, setCart] = useState([])
+
+    const addToCart = (product, qty) => {
+
+    const existing = cart.find(item => item.id === product.id)
+
+    if(existing){
+        const updated = cart.map(item =>
+            item.id === product.id
+            ? {...item, qty: item.qty + qty}
+            : item
+        )
+        setCart(updated)
+    } else {
+        setCart([...cart, {...product, qty: qty}])
+    }
+}
+
+    const removeFromCart = (id) => {
+        setCart(cart.filter(item => item.id !== id))
+    }
+
   return (
-    <ShopContext.Provider value={{products}}>
+    <ShopContext.Provider value={{products, cart, addToCart, removeFromCart}}>
         {children}
     </ShopContext.Provider>
   )

@@ -7,7 +7,6 @@ import HelpCenter from './ShoppingModules/HelpCenter'
 import Login from './ShoppingModules/Login.js'
 import Favorite from './ShoppingModules/Favorite.js'
 import Cart from './ShoppingModules/Cart.js'
-// import { createContext } from 'react';
 import ShopNow from './ShoppingModules/Home/ShopNow.js';
 import ShopCard from './ShoppingModules/Home/shopCard.js';
 import ShopServices from './ShoppingModules/Home/ShopServices.js';
@@ -20,20 +19,21 @@ import NewsLetter from './ShoppingModules/Home/NewsLetter.js';
 import Footer from './ShoppingModules/Home/Footer.js';
 import ShopArray from './components/ShopContext.js';
 import Shop from './ShoppingModules/Shop.js';
-
+import ProductDetails from './ShoppingModules/ProductDetails';
 
 function App() {
 
   const router = createBrowserRouter(createRoutesFromElements(
-    <Route path='/'element={<RouteLayout />}>
-      <Route index element={<><ShopNow /><ShopCard /><ShopServices /><BestSellerCard/><ShopCategory /><OnSale /><TodaySpecial />< Brands/><NewsLetter /><Footer /></>}/>
-      <Route path='About' element={<><About /><Footer /></>}/>
-      <Route path='Contact' element={<><Contact /><NewsLetter /><Footer /></>}/>
-      <Route path='HelpCenter' element={<><HelpCenter /><Footer /></>}/>
+    <Route path='/' element={<RouteLayout />}>
+      <Route index element={<><ShopNow /><ShopCard /><ShopServices /><BestSellerCard/><ShopCategory /><OnSale /><TodaySpecial />< Brands/><NewsLetter /><Footer /></>} />
+      <Route path='About' element={<><About /><Footer /></>} />
+      <Route path='Contact' element={<><Contact /><NewsLetter /><Footer /></>} />
+      <Route path='HelpCenter' element={<><HelpCenter /><Footer /></>} />
       <Route path='Login' element={<Login />} />
       <Route path='Favorite' element={<Favorite />} />
       <Route path='Cart' element={<Cart />} />
       <Route path='Shop' element={<Shop />} />
+      <Route path='product/:id' element={<ProductDetails />} />
     </Route>
   ))
 
@@ -43,7 +43,5 @@ function App() {
     </ShopArray>
   );
 }
-
-
 
 export default App;
