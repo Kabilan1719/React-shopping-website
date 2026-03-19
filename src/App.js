@@ -1,4 +1,4 @@
-import {Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
+import { Route, RouterProvider, createHashRouter, createRoutesFromElements } from 'react-router-dom';
 import './App.css';
 import RouteLayout from './RouteLayout';
 import About from './ShoppingModules/About'
@@ -23,19 +23,21 @@ import ProductDetails from './ShoppingModules/ProductDetails';
 
 function App() {
 
-  const router = createBrowserRouter(createRoutesFromElements(
-    <Route path='/' element={<RouteLayout />}>
-      <Route index element={<><ShopNow /><ShopCard /><ShopServices /><BestSellerCard/><ShopCategory /><OnSale /><TodaySpecial />< Brands/><NewsLetter /><Footer /></>} />
-      <Route path='About' element={<><About /><Footer /></>} />
-      <Route path='Contact' element={<><Contact /><NewsLetter /><Footer /></>} />
-      <Route path='HelpCenter' element={<><HelpCenter /><Footer /></>} />
-      <Route path='Login' element={<Login />} />
-      <Route path='Favorite' element={<Favorite />} />
-      <Route path='Cart' element={<Cart />} />
-      <Route path='Shop' element={<Shop />} />
-      <Route path='product/:id' element={<ProductDetails />} />
-    </Route>
-  ))
+  const router = createHashRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<RouteLayout />}>
+        <Route index element={<><ShopNow /><ShopCard /><ShopServices /><BestSellerCard/><ShopCategory /><OnSale /><TodaySpecial />< Brands/><NewsLetter /><Footer /></>} />
+        <Route path='About' element={<><About /><Footer /></>} />
+        <Route path='Contact' element={<><Contact /><NewsLetter /><Footer /></>} />
+        <Route path='HelpCenter' element={<><HelpCenter /><Footer /></>} />
+        <Route path='Login' element={<Login />} />
+        <Route path='Favorite' element={<Favorite />} />
+        <Route path='Cart' element={<Cart />} />
+        <Route path='Shop' element={<Shop />} />
+        <Route path='product/:id' element={<ProductDetails />} />
+      </Route>
+    )
+  );
 
   return (
     <ShopArray>
